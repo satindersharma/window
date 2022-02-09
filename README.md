@@ -6,7 +6,7 @@
 @echo off
 start /WAIT /B python -m pip install --upgrade pip wheel setuptools
 start /WAIT /B pip install Django==3.2.10
-start /WAIT /B python -m venv venv
+start /WAIT /B python -m venv --upgrade --upgrade-deps venv
 cmd /WAIT /B /k "venv\Scripts\activate.bat"
 ```
 
