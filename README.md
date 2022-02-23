@@ -10,6 +10,14 @@ start /WAIT /B python -m venv --upgrade --upgrade-deps venv
 cmd /WAIT /B /k "venv\Scripts\activate.bat"
 ```
 
+### Sometimes the above is not working
+```batch
+@echo off
+start /WAIT /B python -m pip install --upgrade pip wheel setuptools
+start /WAIT /B pip install Django==3.2.10 virtualenv
+start /WAIT /B virtualenv venv
+cmd /WAIT /B /k "venv\Scripts\activate.bat"
+```
 
 
 ```batch
