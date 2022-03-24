@@ -34,21 +34,21 @@ PAUSE
 
 
 
-## netstat -ano | findstr :8000
-## taskkill /PID 19368 /F
+##### `netstat -ano | findstr :8000`
+##### `taskkill /PID 19368 /F`
 
-## tasklist |find "19368"
+##### `tasklist |find "19368"`
 
-## netstat -ano -p tcp |find "20108"
+##### `netstat -ano -p tcp |find "20108"`
 
-## netstat -ano | findstr "PID :8000"
+##### `netstat -ano | findstr "PID :8000"`
 
 
 ## make bat
-## FOR /F "tokens=4 delims= " %%P IN ('netstat -a -n -o ^| findstr :8000') DO @ECHO TaskKill.exe /PID %%P
+##### `FOR /F "tokens=4 delims= " %%P IN ('netstat -a -n -o ^| findstr :8000') DO @ECHO TaskKill.exe /PID %%P`
 
 ## for cmd
-## FOR /F "tokens=4 delims= " %P IN ('netstat -a -n -o ^| findstr :8000') DO @ECHO TaskKill.exe /PID %P
+##### `FOR /F "tokens=4 delims= " %P IN ('netstat -a -n -o ^| findstr :8000') DO @ECHO TaskKill.exe /PID %P`
 
 
 
