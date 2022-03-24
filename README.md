@@ -55,3 +55,21 @@ PAUSE
 ### Change the default direcotyr opening of terminal (WSL)
 ###### add the following tin bashrc
 cd /mnt/d/Documents/Github
+
+
+### Create your bat file
+```batch
+
+@echo off
+title "Automatic Sync"
+cmd /k "..\venv\Scripts\python.exe ..\manage.py runserver 5656"
+PAUSE
+
+```
+
+### Now create a vbs file via specifieng the above bat file path
+```vbs
+Set WshShell = CreateObject("WScript.Shell") 
+WshShell.Run chr(34) & "D:\Documents\GitHub\easybio-multi\testcmd\easybio_app.bat" & Chr(34), 0
+Set WshShell = Nothing
+```
