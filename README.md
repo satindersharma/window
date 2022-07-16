@@ -73,3 +73,41 @@ Set WshShell = CreateObject("WScript.Shell")
 WshShell.Run chr(34) & "D:\Documents\GitHub\easybio-multi\testcmd\easybio_app.bat" & Chr(34), 0
 Set WshShell = Nothing
 ```
+
+
+### only runserver if not running
+```batch
+@echo off
+title EASYBIO SINGLE DEVICE APP
+netstat -ano | find /i "listening" | findstr 127.0.0.1:8000 >nul 2>nul && (
+    @REM if port is already running then just launch the browser
+    start http://127.0.0.1:8000
+    EXIT
+) || (
+    @REM if port is not running
+    start http://127.0.0.1:8000
+    cmd /k "venv\Scripts\python.exe manage.py runserver --noreload"
+    PAUSE
+)
+
+```
+
+
+### only run bat if not running
+```batch
+@echo off
+title EASYBIO Live Event
+
+@REM cmd /k "venv\Scripts\python.exe toaster.py"
+@REM PAUSE
+
+tasklist /V /NH /FI "IMAGENAME eq cmd.exe" /FI "WINDOWTITLE eq EASYBIO Live Event*" /FI "STATUS eq running" | findstr "python" >nul && (
+    @REM if port is already running then just launch the browser
+    EXIT
+) || (
+    @REM if port is not running
+    cmd /k "venv\Scripts\python.exe toaster.py"
+    PAUSE
+)
+```
+
