@@ -32,6 +32,30 @@ cmd /k "venv\Scripts\python.exe manage.py runserver"
 PAUSE
 ````
 
+### to check if port is listning
+### this is already availablein powersell
+```
+Test-NetConnection 192.168.178.35 -p 389
+```
+```
+Test-NetConnection 127.0.0.1 -p 8000
+```
+
+### ruun in powershell
+```
+Test-NetConnection 192.168.29.113 -p 4370
+```
+### to see if any thing runnning on port 4370
+```
+netstat -ano | findstr 4370
+```
+
+
+
+
+
+`telnet 127.0.0.1 8000`
+
 
 
 ##### `netstat -ano | findstr :8000`
