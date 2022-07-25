@@ -43,6 +43,9 @@ Test-NetConnection 127.0.0.1 -p 8000
 
 ### ruun in powershell
 ```
+Test-NetConnection 192.168.1.201 -p 4370
+```
+```
 Test-NetConnection 192.168.29.113 -p 4370
 ```
 ### to see if any thing runnning on port 4370
